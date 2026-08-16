@@ -37,9 +37,29 @@ def add_prompt():
     print()
     print("=== 프롬프트 추가 ===")
 
-    title = input("제목: ")
-    content = input("내용: ")
-    category = input("카테고리: ")
+    while True:
+        title = input("제목: ").strip()
+
+        if title != "":
+            break
+
+        print("제목을 입력해주세요.")
+
+    while True:
+        content = input("내용: ").strip()
+
+        if content != "":
+            break
+
+        print("내용을 입력해주세요.")
+
+    while True:
+        category = input("카테고리: ").strip()
+
+        if category != "":
+            break
+
+        print("카테고리를 입력해주세요.")
 
     new_prompt = {
         "title": title,
@@ -52,7 +72,6 @@ def add_prompt():
 
     print()
     print("프롬프트가 추가되었습니다.")
-
 
 def show_prompt_list():
     print()
