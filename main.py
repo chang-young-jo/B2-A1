@@ -33,5 +33,13 @@ def show_menu():
     print("7. 즐겨찾기 목록")
     print("0. 종료")
 
+while True:
+    show_menu()
 
-show_menu()
+    choice = input("선택: ")
+
+    if choice == "0":
+        print("프로그램을 종료합니다.")
+        break
+    else:
+        print("아직 구현되지 않은 기능입니다.")
