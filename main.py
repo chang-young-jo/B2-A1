@@ -33,13 +33,37 @@ def show_menu():
     print("7. 즐겨찾기 목록")
     print("0. 종료")
 
+def add_prompt():
+    print()
+    print("=== 프롬프트 추가 ===")
+
+    title = input("제목: ")
+    content = input("내용: ")
+    category = input("카테고리: ")
+
+    new_prompt = {
+        "title": title,
+        "content": content,
+        "category": category,
+        "favorite": False
+    }
+
+    prompts.append(new_prompt)
+
+    print()
+    print("프롬프트가 추가되었습니다.")
+
 while True:
     show_menu()
 
     choice = input("선택: ")
 
-    if choice == "0":
+    if choice == "1":
+        add_prompt()
+
+    elif choice == "0":
         print("프로그램을 종료합니다.")
         break
+
     else:
         print("아직 구현되지 않은 기능입니다.")
