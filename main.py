@@ -119,6 +119,32 @@ def show_by_category():
     print()
     print(f"총 {len(results)}개의 프롬프트")
 
+def search_prompt():
+    print()
+    print("=== 프롬프트 검색 ===")
+
+    keyword = input("검색어: ")
+
+    results = []
+
+    for prompt in prompts:
+        if keyword.lower() in prompt["title"].lower() or keyword.lower() in prompt["content"].lower():
+            results.append(prompt)
+
+    print()
+    print("검색 결과:")
+
+    if len(results) == 0:
+        print("검색 결과가 없습니다.")
+        return
+
+    for i, prompt in enumerate(results, start=1):
+        star = "⭐" if prompt["favorite"] else ""
+        print(f'{i}. [{prompt["category"]}] {prompt["title"]} {star}')
+
+    print()
+    print(f"{len(results)}개의 프롬프트를 찾았습니다.")
+
 
 while True:
     show_menu()
@@ -133,6 +159,9 @@ while True:
 
     elif choice == "3":
         show_by_category()
+
+    elif choice == "4":
+        search_prompt()
 
     elif choice == "0":
         print("프로그램을 종료합니다.")
